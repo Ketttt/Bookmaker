@@ -11,6 +11,9 @@ extension BookmakerView {
     @ViewBuilder
     
     func bookmakerBets() -> some View {
+        
+        let sum = model.sumOfBets()
+        
         VStack(alignment: .leading, spacing: 12) {
             Text(Constants.Titles.bookmakerBets)
                 .bold()
@@ -21,37 +24,45 @@ extension BookmakerView {
                 Image(.logo)
                     .resizable()
                     .aspectRatio(contentMode: .fill)
-                    .frame(width: 110, height: 25)
+                    .frame(width: 115, height: 25)
                 
-                Text("\(model.general()) ставки")
+                Text("\(model.sumOfBets()) ставки")
                     .bold()
                     .font(.system(size: 16))
                 
             }
-            
-            HStack(spacing: 4) {
-                ForEach(model.odds) { odd in
-                    
-                    VStack(alignment: .leading) {
+            GeometryReader { geometry in
+                HStack(alignment: .top, spacing: 2) {
+                    ForEach(model.coefficients) { coefficient in
                         
-                        Rectangle()
-                            .fill(model.color(for: odd.status))
-                            .frame(height: 10)
-                            .frame(width: Double(odd.numbOfBets) * containerWidth / Double(model.general()))
+                        let percent = model.per(numbOfBets: coefficient.numbOfBets, sum: sum)
+                        let width = geometry.size.width * (CGFloat(percent) / 100)
                         
-                        HStack(alignment: .center, spacing: 4) {
-                            Text("\(odd.numbOfBets)")
-                                .bold()
-                            Text("(\(model.per(numbOfBets: odd.numbOfBets))%)")
-                                .bold()
+                        VStack(alignment: .leading) {
                             
+                            Rectangle()
+                                .fill(model.color(for: coefficient.status))
+                                .frame(height: 10)
+                                .frame(width: width)
+                            
+                            HStack(spacing: 4) {
+                                Text("\(coefficient.numbOfBets)")
+                                    .bold()
+                                Text("(\(percent)%)")
+                                    .bold()
+                            }
+                            .font(.system(size: 12))
                         }
-                        .font(.system(size: 12))
                     }
                 }
             }
+            .frame(height: 32)
         }
         .padding(.horizontal, 8)
         .padding(.vertical, 16)
     }
+}
+
+#Preview {
+    BookmakerView(model: BookmakerViewModel())
 }

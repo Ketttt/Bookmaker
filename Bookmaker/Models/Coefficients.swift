@@ -1,5 +1,5 @@
 //
-//  Odds.swift
+//  Coefficients.swift
 //  Bookmaker
 //
 //  Created by Katerina Ivanova on 16.01.2024.
@@ -10,5 +10,5 @@ struct Coefficients: Identifiable {
     let id = UUID()
     let status: String
     let coefficient: Double
-    let numbOfBets: Int
+    let numbOfBets: Int    
 }

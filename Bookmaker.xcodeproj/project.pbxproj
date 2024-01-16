@@ -11,6 +11,12 @@
 		E0A642592B554DE6001F155B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A642582B554DE6001F155B /* ContentView.swift */; };
 		E0A6425B2B554DE6001F155B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E0A6425A2B554DE6001F155B /* Assets.xcassets */; };
 		E0A6425E2B554DE6001F155B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E0A6425D2B554DE6001F155B /* Preview Assets.xcassets */; };
+		E0D3DEF82B568212004A653C /* Coefficients.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D3DEF72B568212004A653C /* Coefficients.swift */; };
+		E0D3DEFB2B568301004A653C /* BookmakerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D3DEFA2B568301004A653C /* BookmakerViewModel.swift */; };
+		E0D3DEFD2B56B4F2004A653C /* BookmakerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D3DEFC2B56B4F2004A653C /* BookmakerView.swift */; };
+		E0D3DF012B56B618004A653C /* AverageOddsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D3DF002B56B618004A653C /* AverageOddsCell.swift */; };
+		E0D3DF032B56B6A5004A653C /* BookmakerBets.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D3DF022B56B6A5004A653C /* BookmakerBets.swift */; };
+		E0D3DF072B56B85D004A653C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D3DF062B56B85D004A653C /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +25,12 @@
 		E0A642582B554DE6001F155B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		E0A6425A2B554DE6001F155B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E0A6425D2B554DE6001F155B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		E0D3DEF72B568212004A653C /* Coefficients.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coefficients.swift; sourceTree = "<group>"; };
+		E0D3DEFA2B568301004A653C /* BookmakerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmakerViewModel.swift; sourceTree = "<group>"; };
+		E0D3DEFC2B56B4F2004A653C /* BookmakerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmakerView.swift; sourceTree = "<group>"; };
+		E0D3DF002B56B618004A653C /* AverageOddsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AverageOddsCell.swift; sourceTree = "<group>"; };
+		E0D3DF022B56B6A5004A653C /* BookmakerBets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmakerBets.swift; sourceTree = "<group>"; };
+		E0D3DF062B56B85D004A653C /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +63,9 @@
 		E0A642552B554DE6001F155B /* Bookmaker */ = {
 			isa = PBXGroup;
 			children = (
+				E0D3DF052B56B829004A653C /* Utils */,
+				E0D3DEFE2B56B5E6004A653C /* Bookmaker */,
+				E0D3DEF62B568207004A653C /* Models */,
 				E0A642562B554DE6001F155B /* BookmakerApp.swift */,
 				E0A642582B554DE6001F155B /* ContentView.swift */,
 				E0A6425A2B554DE6001F155B /* Assets.xcassets */,
@@ -65,6 +80,41 @@
 				E0A6425D2B554DE6001F155B /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		E0D3DEF62B568207004A653C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E0D3DEF72B568212004A653C /* Coefficients.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		E0D3DEFE2B56B5E6004A653C /* Bookmaker */ = {
+			isa = PBXGroup;
+			children = (
+				E0D3DEFF2B56B604004A653C /* Subviews */,
+				E0D3DEFC2B56B4F2004A653C /* BookmakerView.swift */,
+				E0D3DEFA2B568301004A653C /* BookmakerViewModel.swift */,
+			);
+			path = Bookmaker;
+			sourceTree = "<group>";
+		};
+		E0D3DEFF2B56B604004A653C /* Subviews */ = {
+			isa = PBXGroup;
+			children = (
+				E0D3DF002B56B618004A653C /* AverageOddsCell.swift */,
+				E0D3DF022B56B6A5004A653C /* BookmakerBets.swift */,
+			);
+			path = Subviews;
+			sourceTree = "<group>";
+		};
+		E0D3DF052B56B829004A653C /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				E0D3DF062B56B85D004A653C /* Constants.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,8 +187,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E0D3DEFB2B568301004A653C /* BookmakerViewModel.swift in Sources */,
+				E0D3DF032B56B6A5004A653C /* BookmakerBets.swift in Sources */,
 				E0A642592B554DE6001F155B /* ContentView.swift in Sources */,
+				E0D3DEF82B568212004A653C /* Coefficients.swift in Sources */,
+				E0D3DF012B56B618004A653C /* AverageOddsCell.swift in Sources */,
 				E0A642572B554DE6001F155B /* BookmakerApp.swift in Sources */,
+				E0D3DEFD2B56B4F2004A653C /* BookmakerView.swift in Sources */,
+				E0D3DF072B56B85D004A653C /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,6 +336,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -287,6 +344,10 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.katerinaivanova.Bookmaker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -309,6 +370,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -316,6 +378,10 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.katerinaivanova.Bookmaker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

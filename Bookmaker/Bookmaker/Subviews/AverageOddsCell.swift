@@ -11,6 +11,7 @@ extension BookmakerView {
     
     @ViewBuilder
     func averageOddsCell() -> some View {
+        let maxCoeff = model.maxCoeff()
         
         VStack(alignment: .leading) {
             Text(Constants.Titles.averageOdds)
@@ -18,30 +19,31 @@ extension BookmakerView {
                 .font(.system(size: 16))
                 .padding(.bottom, 12)
             
-            ForEach(model.odds) { odd in
-                HStack {
-                    ZStack(alignment: .leading) {
-                        Rectangle()
-                            .fill(bgColor)
-                            .frame(maxWidth: .infinity)
-                            .frame(height: 10)
-                        
-                        
-                        Rectangle()
-                            .fill(model.color(for: odd.status))
-                            .frame(maxWidth: odd.odd * 100)
-                            .frame(height: 10)
+            ForEach(model.coefficients) { coeff in
+                HStack(spacing: 6) {
+                    GeometryReader { geometry in
+                        ZStack(alignment: .leading) {
+                            Rectangle()
+                                .fill(Color(Constants.Colors.rectBg))
+                                .frame(maxWidth: geometry.size.width)
+                            
+                            Rectangle()
+                                .fill(model.color(for: coeff.status))
+                                .frame(width: geometry.size.width * coeff.coefficient / maxCoeff)
+                        }
                     }
+                    .frame(height: 10)
                     
-                    HStack {
-                        Text(odd.status)
+                    HStack(spacing: 0) {
+                        Text(coeff.status)
+                            .frame(width: 60, alignment: .leading)
                             .font(.system(size: 10))
                             .foregroundStyle(Color("refundColor"))
-                            .frame(minWidth: 60, alignment: .leading)
-                        Text("\(odd.odd.debugDescription)")
+                        
+                        Text("\(coeff.coefficient.debugDescription)")
                             .bold()
                             .font(.system(size: 12))
-                            .frame(alignment: .trailing)
+                            .frame(width: 30, alignment: .trailing)
                     }
                 }
             }
@@ -50,3 +52,4 @@ extension BookmakerView {
         .padding(.vertical, 16)
     }
 }
+
